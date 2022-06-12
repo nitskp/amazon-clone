@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import App from "./Pages/App";
+import Auth from "./Pages/Auth";
 import Cart from "./Pages/Cart";
 import Orders from "./Pages/Orders";
 import reportWebVitals from "./reportWebVitals";
@@ -16,6 +17,8 @@ root.render(
         <Route path="/" element={<App />} />
         <Route path="/orders" element={<Orders />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/auth" element={<Auth />} />
+        <Route path="*" element={<Navigate to={"/"} replace/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

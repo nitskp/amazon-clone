@@ -1,2 +1,6 @@
-export { default as Navbar } from "./Navbar/Navbar";
-export { default as ItemCard } from "./ItemCard/ItemCard";
+export * from "./Navbar/Navbar";
+export * from "./ItemCard/ItemCard";
+export * from "./Brand/Brand";
+export * from "./Text/Text";
+export * from "./Input/Input";
+export * from "./Span/Span";

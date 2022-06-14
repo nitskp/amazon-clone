@@ -9,6 +9,7 @@ const Container = styled.main`
   margin: 0 auto;
   position: relative;
   background: #eaeded;
+  height: fit-content;
   .background {
     width: 100%;
     position: absolute;
@@ -27,6 +28,7 @@ const ItemsGrid = styled.div`
   position: relative;
   top: 270px;
   width: 100%;
+  margin: 0 auto;
 `;
 
 function App() {
@@ -36,6 +38,7 @@ function App() {
       <Navbar />
       <Container>
         <img src={amazonBg} alt="Amazon" className="background" />
+        {/* need all these items from api including the image  */}
         <ItemsGrid>
           <ItemCard
             itemImg={sampleItem}
@@ -45,7 +48,7 @@ function App() {
             avgReview={4.5}
             noOfReviews={124355}
           />
-           <ItemCard
+          <ItemCard
             itemImg={sampleItem}
             itemTitle={"Vega Crux Black Helmet-M"}
             price={1358}
@@ -53,7 +56,7 @@ function App() {
             avgReview={4.5}
             noOfReviews={124355}
           />
-           <ItemCard
+          <ItemCard
             itemImg={sampleItem}
             itemTitle={"Vega Crux Black Helmet-M"}
             price={1358}
@@ -61,7 +64,7 @@ function App() {
             avgReview={4.5}
             noOfReviews={124355}
           />
-           <ItemCard
+          <ItemCard
             itemImg={sampleItem}
             itemTitle={"Vega Crux Black Helmet-M"}
             price={1358}
@@ -69,7 +72,7 @@ function App() {
             avgReview={4.5}
             noOfReviews={124355}
           />
-           <ItemCard
+          <ItemCard
             itemImg={sampleItem}
             itemTitle={"Vega Crux Black Helmet-M"}
             price={1358}
@@ -77,7 +80,7 @@ function App() {
             avgReview={4.5}
             noOfReviews={124355}
           />
-           <ItemCard
+          <ItemCard
             itemImg={sampleItem}
             itemTitle={"Vega Crux Black Helmet-M"}
             price={1358}
@@ -85,7 +88,7 @@ function App() {
             avgReview={4.5}
             noOfReviews={124355}
           />
-           <ItemCard
+          <ItemCard
             itemImg={sampleItem}
             itemTitle={"Vega Crux Black Helmet-M"}
             price={1358}
@@ -93,7 +96,7 @@ function App() {
             avgReview={4.5}
             noOfReviews={124355}
           />
-           <ItemCard
+          <ItemCard
             itemImg={sampleItem}
             itemTitle={"Vega Crux Black Helmet-M"}
             price={1358}

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import amazonLogo from "../../Assets/images/Amazon_logo.svg.png";
 import { AiOutlineSearch, AiOutlineShoppingCart } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { Brand } from "..";
 
 const Header = styled.header`
   display: flex;
@@ -27,13 +28,7 @@ const Header = styled.header`
     }
   }
 `;
-const Brand = styled.div`
-  img {
-    height: 40px;
-    width: auto;
-    object-fit: contain;
-  }
-`;
+
 const SearchBar = styled.div`
   display: flex;
   border-radius: 10px;
@@ -80,12 +75,10 @@ const Items = styled(Link)`
   }
 `;
 
-const Navbar = () => {
+export const Navbar = () => {
   return (
     <Header>
-      <Brand>
-        <img src={amazonLogo} alt="Amazon Logo" />
-      </Brand>
+      <Brand imgUrl={amazonLogo} />
 
       <SearchBar>
         <input type="text" />
@@ -111,4 +104,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+// export  Navbar;

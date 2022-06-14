@@ -31,6 +31,7 @@ const ItemCardContainer = styled.div`
     padding: 10px;
     font-size: 21px;
     width: fit-content;
+    color: #0f1111;
     ::before {
       content: "Rs."; // need to look up the problem when using entity code. All css styling goes kboom
       position: absolute;
@@ -47,6 +48,20 @@ const ItemCardContainer = styled.div`
       font-size: 12px;
       font-weight: 400;
     }
+  }
+  .item__price {
+    text-decoration: line-through;
+    font-size: 12px;
+    color: #565959;
+  }
+  .item__title {
+    font-size: 14px;
+    color: #0f1111;
+  }
+  .item__review {
+    color: #565959;
+    font-size: 12px;
+    display: flex;
   }
 `;
 
@@ -65,7 +80,7 @@ const Review = ({ avgReview }: { avgReview: number }) => {
     </>
   );
 };
-const ItemCard = ({
+export const ItemCard = ({
   itemImg,
   itemTitle,
   price,
@@ -103,5 +118,3 @@ const ItemCard = ({
     </ItemCardContainer>
   );
 };
-
-export default ItemCard;

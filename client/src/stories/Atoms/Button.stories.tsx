@@ -47,5 +47,17 @@ Red.args = {
 
 export const Icon = Template.bind({});
 Icon.args = {
-  children: <><BsArrowRepeat /> Icon</>,
+  icon: true,
+  children: (
+    <>
+      <BsArrowRepeat /> Icon
+    </>
+  ),
+};
+
+export const Large = Template.bind({});
+Large.args = {
+  large: true,
+  primary: true,
+  children: "Large",
 };

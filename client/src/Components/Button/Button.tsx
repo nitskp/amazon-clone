@@ -23,6 +23,9 @@ const StyledButton = styled.button<Props>`
   font-size: 13px;
   padding: 0 10px;
   border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #0f1111;
   :hover {
     filter: brightness(106%);
@@ -69,6 +72,16 @@ const StyledButton = styled.button<Props>`
     css`
       background: tomato;
       border-color: tomato;
+    `}
+    ${(props) =>
+    props.icon &&
+    css`
+      background: #fad814;
+      border-color: #fad814;
+      justify-content: space-evenly;
+    `}
+    ${(props)=>props.large && css`
+      min-width: 200px;
     `}
   ${(props) => css`
     ${CommonStyles}

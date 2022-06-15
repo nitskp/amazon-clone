@@ -6,6 +6,7 @@ interface Props {
 }
 
 const StyledSelect = styled.select`
+  background: linear-gradient(to bottom, #bebdbd, white);
   :hover {
     filter: brightness(106%);
   }

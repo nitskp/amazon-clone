@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface Props {
-  items: string[];
+  items: string[] | number[];
   name: string;
 }
 

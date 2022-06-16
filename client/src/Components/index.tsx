@@ -8,3 +8,7 @@ export * from "./Button/Button";
 export * from "./Link/StyledLink";
 export * from "./Price/Price";
 export * from "./Select/Select";
+export * from "./SearchBar/Searchbar";
+export * from "./NavLink/NavLink";
+export * from "./CartHeader/CartHeader";
+export * from "./CartItem/CartItem";

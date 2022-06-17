@@ -16,3 +16,4 @@ export * from "./Subtotal/Subtotal";
 export * from "./Bill/Bill";
 export * from "./Anchor/Anchor";
 export * from "./ListofLinks/ListofLinks";
+export * from "./OrderDescription/OrderDescription";

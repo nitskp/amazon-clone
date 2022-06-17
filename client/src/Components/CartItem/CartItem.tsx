@@ -61,7 +61,7 @@ export const CartItem = ({ imgUrl, title, price, qty }: Props) => {
         <div className="buy-info">
           <div>
             <Select name="qty" items={Array.from(Array(qty + 1).keys())} />
-            <Span color="#b6c1d0">Qty</Span>
+            <Span textColor="#b6c1d0">Qty</Span>
           </div>
 
           <Button plainText>Delete</Button>

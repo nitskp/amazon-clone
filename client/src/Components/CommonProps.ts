@@ -1,12 +1,13 @@
 import { css } from "styled-components";
 
 export interface CommonProps {
-  color?: string;
+  textColor?: string;
   fontSize?: string;
   children?: any;
+  className?: string;
 }
 
 export const CommonStyles = css<CommonProps>`
-  ${(props) => props.color && `color:${props.color};`}
+  ${(props) => props.textColor && `color:${props.textColor};`}
   ${(props) => props.fontSize && `font-size:${props.fontSize};`}
 `;

@@ -6,4 +6,13 @@ export default {
   component: Searchbar,
 } as ComponentMeta<typeof Searchbar>;
 
-export const Default: ComponentStory<typeof Searchbar> = () => <Searchbar />;
+const Template: ComponentStory<typeof Searchbar> = (args) => (
+  <Searchbar {...args} />
+);
+
+export const Default = Template.bind({});
+
+export const IconInside = Template.bind({});
+IconInside.args = {
+  iconInside: true,
+};

@@ -4,24 +4,30 @@ import { Text, Price } from "..";
 interface Props {
   noOfItems: number;
   totalPrice: number;
+  centerAlign?: boolean;
 }
 
-const SubtotalContainer = styled.div`
+interface StyleProps {
+  centerAlign?: boolean;
+}
+
+const SubtotalContainer = styled.div<StyleProps>`
   h3 {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     font-weight: 400;
+    ${({ centerAlign }) => centerAlign && `justify-content: center;`}
     p {
       margin-left: 23px;
     }
   }
 `;
 
-export const Subtotal = ({ noOfItems, totalPrice }: Props) => {
+export const Subtotal = ({ noOfItems, totalPrice, centerAlign }: Props) => {
   const itemOrItems: string = noOfItems > 1 ? "items" : "item";
   return (
-    <SubtotalContainer>
+    <SubtotalContainer centerAlign={centerAlign}>
       <Text type="h3">
         {`Subtotal (${noOfItems} ${itemOrItems}):`} <Price price={totalPrice} />
       </Text>

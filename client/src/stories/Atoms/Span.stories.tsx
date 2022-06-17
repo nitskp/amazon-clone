@@ -10,7 +10,7 @@ const Template: ComponentStory<typeof Span> = (args) => <Span {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  color: "tomato",
+  textColor: "tomato",
   fontSize: "24px",
   children: "Default",
 };

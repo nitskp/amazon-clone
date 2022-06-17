@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { CartHeader, ItemCard, Navbar } from "../../Components";
+import { Bill, CartHeader, ItemCard, Navbar } from "../../Components";
 import { GlobalStyles } from "../../Components/GlobalStyles";
 import amazonBg from "../../Assets/images/amazonBackground3.jpg";
 import sampleItem from "../../Assets/images/sampleItem.jpg";

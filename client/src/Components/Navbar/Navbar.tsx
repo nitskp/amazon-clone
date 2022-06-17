@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import amazonLogo from "../../Assets/images/Amazon_logo.svg.png";
-import { AiOutlineSearch, AiOutlineShoppingCart } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import { Brand, Searchbar, NavLink } from "..";
 
 const Header = styled.header`
@@ -18,7 +17,6 @@ const NavLinks = styled.nav`
   align-items: center;
   justify-content: center;
 `;
-
 
 export const Navbar = () => {
   return (

@@ -12,3 +12,4 @@ export * from "./SearchBar/Searchbar";
 export * from "./NavLink/NavLink";
 export * from "./CartHeader/CartHeader";
 export * from "./CartItem/CartItem";
+export * from "./Subtotal/Subtotal";

@@ -38,6 +38,6 @@ export const Price = ({ price }: Props) => {
       return ans;
     });
   };
-  // need to check add commas function
+  // need to check add commas function and make it a helper function, needed other places too
   return <StyledPrice type="p">{price}</StyledPrice>;
 };

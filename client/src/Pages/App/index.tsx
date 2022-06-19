@@ -1,8 +1,10 @@
 import styled from "styled-components";
-import { Bill, CartHeader, ItemCard, Navbar } from "../../Components";
+import { Bill, Carousel, CartHeader, ItemCard, Navbar } from "../../Components";
 import { GlobalStyles } from "../../Components/GlobalStyles";
-import amazonBg from "../../Assets/images/amazonBackground3.jpg";
 import sampleItem from "../../Assets/images/sampleItem.jpg";
+import amazonBackground from "../../Assets/images/amazonBackground.jpg";
+import amazonBackground2 from "../../Assets/images/amazonBackground2.jpg";
+import amazonBackground3 from "../../Assets/images/amazonBackground3.jpg";
 
 const Container = styled.main`
   max-width: 1600px;
@@ -10,16 +12,6 @@ const Container = styled.main`
   position: relative;
   background: #eaeded;
   height: fit-content;
-  .background {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    object-fit: contain;
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-  }
 `;
 
 const ItemsGrid = styled.div`
@@ -37,7 +29,9 @@ function App() {
       <GlobalStyles />
       <Navbar />
       <Container>
-        <img src={amazonBg} alt="Amazon" className="background" />
+        <Carousel
+          imgUrls={[amazonBackground, amazonBackground2, amazonBackground3]}
+        />
         {/* need all these items from api including the image  */}
         <ItemsGrid>
           <ItemCard

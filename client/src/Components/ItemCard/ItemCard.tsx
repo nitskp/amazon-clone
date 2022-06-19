@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { BsStarFill, BsStarHalf } from "react-icons/bs";
-import { Text } from "..";
+import { Review, Text } from "..";
 
 interface Props {
   itemImg: string;
@@ -67,20 +67,7 @@ const ItemCardContainer = styled.div`
 `;
 
 // calculating stars in review
-const Review = ({ avgReview }: { avgReview: number }) => {
-  const noOfFullStars = Math.floor(avgReview);
-  const halfStar = Math.floor(avgReview + 0.5) - noOfFullStars;
-  const FullStars = [];
-  for (let i = noOfFullStars; i > 0; i--) {
-    FullStars.push(<BsStarFill key={"review" + i} color="#E88520" />);
-  }
 
-  return (
-    <>
-      {FullStars} {halfStar ? <BsStarHalf color="#e88520" /> : <></>}{" "}
-    </>
-  );
-};
 export const ItemCard = ({
   itemImg,
   itemTitle,

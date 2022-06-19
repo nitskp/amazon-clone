@@ -11,7 +11,6 @@ interface Props {
 }
 
 const ListofLinksContainer = styled.div`
-  background: rgb(0, 0, 0);
   text-align: left;
   padding: 10px 16px;
   ul {
@@ -32,7 +31,7 @@ export const ListofLinks = ({ heading, links }: Props) => {
       <ul>
         {links.map((link) => (
           <li>
-            <Anchor to={link.url} textColor="#f2f0f0" fontSize="14px">
+            <Anchor to={link.url} textColor="#dddddd" fontSize="14px">
               {link.name}
             </Anchor>
           </li>

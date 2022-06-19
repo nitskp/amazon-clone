@@ -23,3 +23,4 @@ export * from "./Cart/Cart";
 export * from "./Order/Order";
 export * from "./CategoryCard/CategoryCard";
 export * from "./Review/Review";
+export * from "./Footer/Footer";

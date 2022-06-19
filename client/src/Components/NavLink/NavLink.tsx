@@ -7,10 +7,12 @@ interface Props {
   smallText: string;
   mainText: string;
   icon?: React.ReactNode;
+  color?: string;
 }
 
 interface StyledProps {
   cart?: boolean;
+  color?: string;
 }
 
 const Item = styled(Link)<StyledProps>`
@@ -24,6 +26,9 @@ const Item = styled(Link)<StyledProps>`
   span {
     font-size: 12px;
   }
+
+  ${({ color }) => color && `color: ${color};`}
+
   ${({ cart }) =>
     cart &&
     css`
@@ -43,10 +48,10 @@ const Item = styled(Link)<StyledProps>`
     `}
 `;
 
-export const NavLink = ({ to, mainText, smallText, icon }: Props) => {
+export const NavLink = ({ to, mainText, smallText, icon, color }: Props) => {
   return (
     // !! to conver icon to boolean type
-    <Item to={to} cart={!!icon}>
+    <Item to={to} cart={!!icon} color={color}>
       {icon}
       <span>{smallText}</span>
       {mainText}

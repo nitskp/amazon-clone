@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { BsStarFill, BsStarHalf } from "react-icons/bs";
+import { Text } from "..";
 
 interface Props {
   itemImg: string;
@@ -71,7 +72,7 @@ const Review = ({ avgReview }: { avgReview: number }) => {
   const halfStar = Math.floor(avgReview + 0.5) - noOfFullStars;
   const FullStars = [];
   for (let i = noOfFullStars; i > 0; i--) {
-    FullStars.push(<BsStarFill color="#E88520" />);
+    FullStars.push(<BsStarFill key={"review" + i} color="#E88520" />);
   }
 
   return (
@@ -104,11 +105,15 @@ export const ItemCard = ({
       </div>
 
       {/* need to add a function to add commas every three digits */}
-      <div className="item__discount-price">
+      <Text type="p" className="item__discount-price">
         {Math.floor(discountedPrice(price, discountInPercent))}
-      </div>
-      <div className="item__price">{price}</div>
-      <div className="item__title">{itemTitle}</div>
+      </Text>
+      <Text type="p" className="item__price">
+        {price}
+      </Text>
+      <Text type="h2" className="item__title">
+        {itemTitle}
+      </Text>
       <div className="item__review">
         <div className="review__stars">
           {avgReview ? <Review avgReview={avgReview} /> : <>No review yet</>}

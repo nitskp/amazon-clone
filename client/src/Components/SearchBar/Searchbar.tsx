@@ -80,7 +80,7 @@ export const Searchbar = ({ iconInside }: Props) => {
   const { register, handleSubmit } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
   return (
-    <SearchBar iconInside={iconInside}>
+    <SearchBar iconInside={iconInside} className="search-bar">
       <form onSubmit={handleSubmit(onSubmit)}>
         {iconInside && (
           <AiOutlineSearch className="search-icon" fontSize={20} />

@@ -40,10 +40,15 @@ const CartItemConatiner = styled.div`
   .price {
     width: fit-content;
     position: relative;
-    ::before {
+    p{
+      position: relative;
+      top: -38px;
+    }
+    p::after {
       position: absolute;
       top: -22px;
-      left: -20px;
+      left: -22px;
+      font-size: 14px;
       content: "Price";
       color: #b6c1d0;
     }

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Button, Text, Span } from "..";
 import { BsArrowRepeat } from "react-icons/bs";
 
-interface Props {
+export interface OrderDescriptionProps {
   imageUrl: string;
   title: string;
   returnDate: Date;
@@ -13,6 +13,9 @@ const OrderDescriptionConatiner = styled.div`
   gap: 10px;
   align-items: center;
 
+  .info {
+    width: fit-content;
+  }
   .image-container {
     max-width: 100px;
     max-height: 100px;
@@ -27,7 +30,11 @@ const OrderDescriptionConatiner = styled.div`
   }
 `;
 
-export const OrderDescription = ({ imageUrl, title, returnDate }: Props) => {
+export const OrderDescription = ({
+  imageUrl,
+  title,
+  returnDate,
+}: OrderDescriptionProps) => {
   return (
     <OrderDescriptionConatiner>
       <div className="image-container">
@@ -37,6 +44,7 @@ export const OrderDescription = ({ imageUrl, title, returnDate }: Props) => {
         <Text type="h3">{title}</Text>
         <Text type="p">
           Return window closes on{" "}
+          {/* need to create a function for removing days  */}
           {returnDate.toDateString().replace("Fri ", "")}{" "}
         </Text>
         <Button secondary>

@@ -17,4 +17,8 @@ export * from "./Bill/Bill";
 export * from "./Anchor/Anchor";
 export * from "./ListofLinks/ListofLinks";
 export * from "./OrderDescription/OrderDescription";
-export * from "./Carousel/Carousel"
+export * from "./Carousel/Carousel";
+export * from "./ImageWithtext/ImageWithText";
+export * from "./Cart/Cart";
+export * from "./Order/Order";
+export * from "./CategoryCard/CategoryCard";

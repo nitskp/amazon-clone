@@ -6,10 +6,29 @@ interface Props {
   // need to learn how to get types dynamically
   register: UseFormRegister<any>;
   name: Path<any>;
+  label?: string;
 }
 
-const StyledInput = styled.input``;
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+`;
 
-export const Input = ({ type, register, name }: Props) => {
-  return <StyledInput type={type} {...register(name)} />;
+const StyledInput = styled.input`
+  padding: 3px 7px;
+`;
+const StyledLabel = styled.label`
+  font-size: 13px;
+  color: #111111;
+  font-weight: 700;
+`;
+
+export const Input = ({ type, register, name, label }: Props) => {
+  return (
+    <Container>
+      <StyledLabel htmlFor={name}>{label}</StyledLabel>
+      <StyledInput id={name} type={type} {...register(name)} />
+    </Container>
+  );
 };

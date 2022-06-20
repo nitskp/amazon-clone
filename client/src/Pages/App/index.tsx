@@ -1,13 +1,5 @@
 import styled from "styled-components";
-import {
-  Bill,
-  Carousel,
-  CartHeader,
-  CategoryCard,
-  Footer,
-  ItemCard,
-  Navbar,
-} from "../../Components";
+import { Carousel, CategoryCard, Footer, Navbar } from "../../Components";
 import { GlobalStyles } from "../../Components/GlobalStyles";
 import sampleItem from "../../Assets/images/sampleItem.jpg";
 import amazonBackground from "../../Assets/images/amazonBackground.jpg";

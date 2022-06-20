@@ -7,23 +7,22 @@ interface Props {
 }
 
 const SignupFooter = styled.footer`
-  max-width: 1600px;
+  max-width: 368px;
   width: 80vw;
   margin: 0 auto;
   text-align: center;
   .links {
     display: flex;
-    justify-content: space-evenly;
+    justify-content:space-between;
+    margin-bottom: 10px;
   }
   a {
-    margin-right: 10px;
     font-size: 11px;
   }
 `;
 
 const TheFooter = styled.footer`
   position: relative;
- 
 `;
 
 const StyledFooter = styled.footer`

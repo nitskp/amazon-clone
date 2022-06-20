@@ -16,6 +16,10 @@ const Container = styled.main`
   /* padding-top: 270px; */
 `;
 
+const Wrapper = styled.div`
+  overflow-x: hidden;
+`;
+
 const ItemsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -29,11 +33,14 @@ const ItemsGrid = styled.div`
   @media screen and (max-width: 900px) {
     grid-template-columns: 1fr 1fr;
   }
+  @media screen and (max-width: 450px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 function App() {
   return (
-    <>
+    <Wrapper>
       <GlobalStyles />
       <Navbar />
 
@@ -202,7 +209,7 @@ function App() {
         </ItemsGrid>
       </Container>
       <Footer />
-    </>
+    </Wrapper>
   );
 }
 

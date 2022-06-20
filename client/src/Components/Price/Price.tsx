@@ -19,25 +19,25 @@ const StyledPrice = styled(Text)`
 `;
 
 export const Price = ({ price }: Props) => {
-  const addCommas = (price: number) => {
-    const digits = String(price).split("");
-    const length = digits.length;
-    let ans: string = "";
-    digits.forEach((char, index) => {
-      if (length - index + 1 > 3) {
-        if ((index + 1) % 2 === 0) {
-          ans += char + ",";
-        } else {
-          ans += char;
-        }
-      } else if (length - index + 1 === 3) {
-        ans += char + ",";
-      } else {
-        ans += char;
-      }
-      return ans;
-    });
-  };
+  // const addCommas = (price: number) => {
+  //   const digits = String(price).split("");
+  //   const length = digits.length;
+  //   let ans: string = "";
+  //   digits.forEach((char, index) => {
+  //     if (length - index + 1 > 3) {
+  //       if ((index + 1) % 2 === 0) {
+  //         ans += char + ",";
+  //       } else {
+  //         ans += char;
+  //       }
+  //     } else if (length - index + 1 === 3) {
+  //       ans += char + ",";
+  //     } else {
+  //       ans += char;
+  //     }
+  //     return ans;
+  //   });
+  // };
   // need to check add commas function and make it a helper function, needed other places too
   return <StyledPrice type="p">{price}</StyledPrice>;
 };

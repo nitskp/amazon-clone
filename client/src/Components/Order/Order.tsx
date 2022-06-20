@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Text, Button, OrderDescription, OrderDescriptionProps } from "..";
-import sampleItem from "../../Assets/images/sampleItem.jpg";
 
 interface Props {
   returnDate: Date;
@@ -24,7 +23,7 @@ const OrderContainer = styled.div`
     flex-direction: column;
     align-items: center;
     button {
-        margin-bottom: 20px;
+      margin-bottom: 20px;
     }
   }
 `;
@@ -44,10 +43,18 @@ export const Order = ({ returnDate, orders }: Props) => {
         ))}
       </div>
       <div className="buttons">
-        <Button white large>Track Package</Button>
-        <Button white large>Leave Seller Feedback</Button>
-        <Button white large>Leave Delivery Feedback</Button>
-        <Button white large>Write a product review</Button>
+        <Button white large>
+          Track Package
+        </Button>
+        <Button white large>
+          Leave Seller Feedback
+        </Button>
+        <Button white large>
+          Leave Delivery Feedback
+        </Button>
+        <Button white large>
+          Write a product review
+        </Button>
       </div>
     </OrderContainer>
   );

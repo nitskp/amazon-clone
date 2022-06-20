@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { BsStarFill, BsStarHalf } from "react-icons/bs";
 import { Review, Text } from "..";
 
 interface Props {

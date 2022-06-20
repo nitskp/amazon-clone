@@ -22,6 +22,7 @@ const Container = styled.div<ShowItem>`
   width: 90vw;
   display: grid;
   grid-template-columns: 1fr 2.5fr 2fr;
+  gap: 10px;
   justify-items: flex-start;
   align-items: center;
   position: sticky;

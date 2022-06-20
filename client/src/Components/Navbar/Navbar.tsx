@@ -78,7 +78,7 @@ const NavLinks = styled.nav<ShowItem>`
     display: ${({ display }) => (display ? "flex" : "none;")};
     position: absolute;
     top: 0;
-    right: 0;
+    right: -5vw;
     flex-direction: column;
     background: #eaeded;
     width: 60vw;

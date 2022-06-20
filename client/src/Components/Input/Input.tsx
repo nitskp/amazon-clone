@@ -26,7 +26,7 @@ const StyledLabel = styled.label`
 
 export const Input = ({ type, register, name, label }: Props) => {
   return (
-    <Container>
+    <Container className="input-container">
       <StyledLabel htmlFor={name}>{label}</StyledLabel>
       <StyledInput id={name} type={type} {...register(name)} />
     </Container>

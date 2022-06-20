@@ -24,10 +24,14 @@ const SearchBar = styled.div<Props>`
     top: 7px;
     left: 6px;
   }
+  .input-container {
+    margin-bottom: 0;
+  }
   input {
+    height: 50px;
     width: calc(80vw - 441px);
     min-width: 200px;
-    padding: 10px;
+    /* padding: 10px; */
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     border: white solid 2px;

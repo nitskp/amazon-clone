@@ -24,6 +24,7 @@ const ItemsGrid = styled.div`
   width: 90%;
   margin: 0 auto;
   gap: 20px;
+  overflow-x: hidden;
   padding-bottom: 20px;
   @media screen and (max-width: 900px) {
     grid-template-columns: 1fr 1fr;

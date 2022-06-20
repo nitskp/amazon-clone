@@ -12,17 +12,23 @@ interface ShowItem {
   display?: boolean;
 }
 
-const Header = styled.header<ShowItem>`
+const Header = styled.header`
+  background: #0f1111;
+`;
+
+const Container = styled.div<ShowItem>`
+  max-width: 1600px;
+  margin: 0 auto;
+  width: 90vw;
   display: grid;
-  grid-template-columns: 1fr 2.5fr 1fr;
-  justify-items: center;
+  grid-template-columns: 1fr 2.5fr 2fr;
+  justify-items: flex-start;
   align-items: center;
   position: sticky;
   position: relative;
   top: 0;
   z-index: 9999;
   padding: 10px 20px;
-  background: #0f1111;
 
   .hamburger-container {
     position: absolute;
@@ -48,7 +54,7 @@ const Header = styled.header<ShowItem>`
       grid-column: 1 / span 2;
       margin: 0 auto;
       input {
-        width: calc(100vw - 80px);
+        width: calc(90vw - 80px);
         margin: 0 auto;
       }
     }
@@ -67,6 +73,7 @@ const NavLinks = styled.nav<ShowItem>`
   display: flex;
   align-items: center;
   justify-content: center;
+  justify-self: center;
   @media (max-width: 443px) {
     display: ${({ display }) => (display ? "flex" : "none;")};
     position: absolute;
@@ -89,49 +96,54 @@ const NavLinks = styled.nav<ShowItem>`
 export const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(false);
   return (
-    <Header display={showNavbar}>
-      <Brand imgUrl={amazonLogo} />
-      <Searchbar />
-      <div className="hamburger-container" onClick={() => setShowNavbar(true)}>
-        <AiOutlineMenu fontSize={40} color="#ffffff" />
-      </div>
-
-      <NavLinks display={showNavbar}>
-        <div className="close-container" onClick={() => setShowNavbar(false)}>
-          <AiOutlineClose fontSize={40} color="#000000" />
+    <Header>
+      <Container display={showNavbar}>
+        <Brand imgUrl={amazonLogo} />
+        <Searchbar />
+        <div
+          className="hamburger-container"
+          onClick={() => setShowNavbar(true)}
+        >
+          <AiOutlineMenu fontSize={40} color="#ffffff" />
         </div>
 
-        <NavLink
-          to={"auth"}
-          smallText={"Hello, Sign in"}
-          mainText={" Account & Lists"}
-          color={showNavbar ? "#000000" : "#ffffff"}
-        />
-        <NavLink
-          to="orders"
-          smallText="Returns"
-          mainText="& Orders"
-          color={showNavbar ? "#000000" : "#ffffff"}
-        />
+        <NavLinks display={showNavbar}>
+          <div className="close-container" onClick={() => setShowNavbar(false)}>
+            <AiOutlineClose fontSize={40} color="#000000" />
+          </div>
 
-        <NavLink
-          to="cart"
-          smallText="0"
-          mainText="Cart"
-          color={showNavbar ? "#000000" : "#ffffff"}
-          icon={
-            <AiOutlineShoppingCart
-              fontSize={40}
-              color={showNavbar ? "#000000" : "#ffffff"}
-            />
-          }
-        />
-        {/* <Items to={"/cart"} className="cart">
+          <NavLink
+            to={"auth"}
+            smallText={"Hello, Sign in"}
+            mainText={" Account & Lists"}
+            color={showNavbar ? "#000000" : "#ffffff"}
+          />
+          <NavLink
+            to="orders"
+            smallText="Returns"
+            mainText="& Orders"
+            color={showNavbar ? "#000000" : "#ffffff"}
+          />
+
+          <NavLink
+            to="cart"
+            smallText="0"
+            mainText="Cart"
+            color={showNavbar ? "#000000" : "#ffffff"}
+            icon={
+              <AiOutlineShoppingCart
+                fontSize={40}
+                color={showNavbar ? "#000000" : "#ffffff"}
+              />
+            }
+          />
+          {/* <Items to={"/cart"} className="cart">
           <AiOutlineShoppingCart fontSize={40} />
           <span className="order-number">0</span>
           Cart
         </Items> */}
-      </NavLinks>
+        </NavLinks>
+      </Container>
     </Header>
   );
 };

@@ -17,9 +17,11 @@ const Container = styled.div`
 
 export const ImageWithText = ({ imgUrl, text }: Props) => {
   return (
-    <Container>
+    <Container className="img-with-text">
       <img src={imgUrl} alt="Categories or Item" />
-      <Text type="p">{text}</Text>
+      <Text type="p" fontSize="12px">
+        {text}
+      </Text>
     </Container>
   );
 };

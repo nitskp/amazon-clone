@@ -59,6 +59,7 @@ const StyledButton = styled.button<Props>`
       background: transparent;
       border: transparent;
       color: #3a788a;
+      padding: 0;
     `}
     ${(props) =>
     props.black &&

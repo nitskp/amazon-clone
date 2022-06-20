@@ -21,9 +21,14 @@ const SignupFooter = styled.footer`
   }
 `;
 
+const TheFooter = styled.footer`
+  position: relative;
+ 
+`;
+
 const StyledFooter = styled.footer`
   background: #202d3e;
-  padding-bottom: 20px;
+  padding: 20px 0;
 `;
 const Container = styled.div`
   max-width: 1600px;
@@ -84,7 +89,7 @@ export const Footer = ({ signUpFooter }: Props) => {
       </Text>
     </SignupFooter>
   ) : (
-    <>
+    <TheFooter>
       <StyledFooter>
         <Container>
           <div className="list-of-links">
@@ -194,7 +199,7 @@ export const Footer = ({ signUpFooter }: Props) => {
           </Text>
         </Container>
       </SecondFooter>
-    </>
+    </TheFooter>
   );
 };
 // 9999999

@@ -38,6 +38,7 @@ const CartItemConatiner = styled.div`
     h3 {
       font-size: 18px;
       margin-bottom: 20px;
+      padding-left: 10px;
       @media screen and (max-width: 1040px) {
         text-align: center;
       }
@@ -57,11 +58,13 @@ const CartItemConatiner = styled.div`
     }
   }
   .price {
-    width: fit-content;
     position: relative;
-    width: 100%;
+    width: 150px;
     margin-top: 20px;
     text-align: right;
+    @media screen and (max-width: 789px) {
+      width: 100%;
+    }
     p {
       display: inline-block;
     }

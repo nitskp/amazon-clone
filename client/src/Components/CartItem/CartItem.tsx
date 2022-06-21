@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Button, Price, Select, Text, Span } from "..";
+import { Button, Price, Select, Text } from "..";
 
 interface Props {
   imgUrl: string;

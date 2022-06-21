@@ -19,7 +19,7 @@ export * from "./ListofLinks/ListofLinks";
 export * from "./OrderDescription/OrderDescription";
 export * from "./Carousel/Carousel";
 export * from "./ImageWithtext/ImageWithText";
-export * from "./Cart/Cart";
+export * from "./Cart/CartCard";
 export * from "./Order/Order";
 export * from "./CategoryCard/CategoryCard";
 export * from "./Review/Review";

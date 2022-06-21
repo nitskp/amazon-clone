@@ -4,9 +4,18 @@ import { CartItem } from "../CartItem/CartItem";
 import { Subtotal } from "../Subtotal/Subtotal";
 import sampleItem from "../../Assets/images/sampleItem.jpg";
 
-const CartContainer = styled.div``;
+const CartContainer = styled.div`
+  background: white;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  .sub-total {
+    padding: 20px 0;
+  }
+`;
 
-export const Cart = () => {
+export const CartCard = () => {
   return (
     <CartContainer>
       <CartHeader />

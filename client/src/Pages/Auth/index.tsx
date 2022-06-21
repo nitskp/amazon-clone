@@ -46,7 +46,6 @@ const Form = styled.form`
   padding: 20px 26px;
   text-align: left;
   margin-bottom: 40px;
-
   label {
     margin-bottom: 3px;
   }
@@ -69,12 +68,15 @@ const Form = styled.form`
 const Header = styled.header`
   padding-top: 20px;
 `;
+const Wrapper = styled.div`
+  overflow-x: hidden;
+`;
 
 const Auth = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
   return (
-    <>
+    <Wrapper>
       <GlobalStyles />
       <Header>
         <Brand imgUrl={amazonLogoBlack} />
@@ -114,7 +116,7 @@ const Auth = () => {
       </Container>
 
       <Footer signUpFooter />
-    </>
+    </Wrapper>
   );
 };
 

@@ -27,8 +27,8 @@ const SubtotalContainer = styled.div<StyleProps>`
 export const Subtotal = ({ noOfItems, totalPrice, centerAlign }: Props) => {
   const itemOrItems: string = noOfItems > 1 ? "items" : "item";
   return (
-    <SubtotalContainer centerAlign={centerAlign}>
-      <Text type="h3">
+    <SubtotalContainer className="sub-total" centerAlign={centerAlign}>
+      <Text type="h3" fontSize="18px">
         {`Subtotal (${noOfItems} ${itemOrItems}):`} <Price price={totalPrice} />
       </Text>
     </SubtotalContainer>

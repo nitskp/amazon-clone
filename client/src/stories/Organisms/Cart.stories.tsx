@@ -1,9 +1,9 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { Cart } from "../../Components";
+import { CartCard } from "../../Components";
 
 export default {
-  title: "Organisms/Cart",
-  component: Cart,
-} as ComponentMeta<typeof Cart>;
+  title: "Organisms/CartCard",
+  component: CartCard,
+} as ComponentMeta<typeof CartCard>;
 
-export const Sample: ComponentStory<typeof Cart> = () => <Cart />;
+export const Sample: ComponentStory<typeof CartCard> = () => <CartCard />;

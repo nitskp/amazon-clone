@@ -12,13 +12,17 @@ const OrderDescriptionConatiner = styled.div`
   display: flex;
   gap: 10px;
   align-items: center;
-
   .info {
-    width: fit-content;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
   .image-container {
     max-width: 100px;
-    max-height: 100px;
+    height: auto;
     img {
       width: 100%;
       object-fit: contain;
@@ -41,8 +45,10 @@ export const OrderDescription = ({
         <img src={imageUrl} alt="Sample Item" />
       </div>
       <div className="info">
-        <Text type="h3">{title}</Text>
-        <Text type="p">
+        <Text type="h3" textColor="#007185" fontSize="14px">
+          {title}
+        </Text>
+        <Text type="p" fontSize="12px">
           Return window closes on{" "}
           {/* need to create a function for removing days  */}
           {returnDate.toDateString().replace("Fri ", "")}{" "}

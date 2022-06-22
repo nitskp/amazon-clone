@@ -13,7 +13,7 @@ const SignupFooter = styled.footer`
   text-align: center;
   .links {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     margin-bottom: 10px;
   }
   a {
@@ -35,23 +35,34 @@ const Container = styled.div`
   margin: 0 auto;
   .list-of-links {
     margin: 0 auto;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     justify-content: space-between;
     align-items: flex-start;
     border-bottom: solid 1px #496891;
     margin-bottom: 20px;
+    @media screen and (max-width: 428px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
   .small {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     border-bottom: none;
+    @media screen and (max-width: 428px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
     ul {
       margin-top: 0;
+    }
+    li {
+      margin-bottom: 5px;
     }
     h3 {
       font-size: 11px;
       color: #dddddd;
       margin: 0;
+      margin-bottom: 7.5px;
     }
     a {
       font-size: 10px;

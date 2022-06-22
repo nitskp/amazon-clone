@@ -11,7 +11,7 @@ const Template: ComponentStory<typeof Order> = (args) => <Order {...args} />;
 
 export const Sample = Template.bind({});
 Sample.args = {
-  returnDate: new Date(Date.now()),
+  deliveredDate: new Date(Date.now()),
   orders: [
     {
       imageUrl: sampleItem,

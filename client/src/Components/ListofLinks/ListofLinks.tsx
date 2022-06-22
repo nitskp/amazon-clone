@@ -13,12 +13,18 @@ interface Props {
 const ListofLinksContainer = styled.div`
   text-align: left;
   padding: 10px 16px;
+  h3{
+    margin-bottom: 15px;
+  }
   ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
     list-style: none;
     padding-left: 0;
+    li {
+      margin-bottom:10px ;
+    }
   }
 `;
 

@@ -14,24 +14,23 @@ interface Props {
 const SearchBar = styled.div<Props>`
   display: flex;
   border-radius: 10px;
-
   form {
     display: flex;
     position: relative;
   }
   .search-icon {
     position: absolute;
-    top: 7px;
+    top: 10px;
     left: 6px;
   }
   .input-container {
     margin-bottom: 0;
   }
   input {
-    height: 50px;
+    height: fit-content;
     width: calc(80vw - 441px);
     min-width: 200px;
-    /* padding: 10px; */
+    padding: 10px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     border: white solid 2px;
@@ -43,6 +42,8 @@ const SearchBar = styled.div<Props>`
         border: none;
         border-radius: 6px;
         margin-right: 20px;
+        padding-left: 30px;
+        max-width: 330px;
       `}
     :hover {
       border: #f3bc69 solid 2px;

@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 interface Props {
@@ -8,6 +9,7 @@ const BrandContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   img {
     height: 40px;
     width: auto;
@@ -16,8 +18,9 @@ const BrandContainer = styled.div`
 `;
 
 export const Brand = ({ imgUrl }: Props) => {
+  const nav = useNavigate();
   return (
-    <BrandContainer>
+    <BrandContainer onClick={() => nav("/")}>
       <img src={imgUrl} alt="Brand" />
     </BrandContainer>
   );

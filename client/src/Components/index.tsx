@@ -25,3 +25,4 @@ export * from "./CategoryCard/CategoryCard";
 export * from "./Review/Review";
 export * from "./Footer/Footer";
 export * from "./TextBetweenLine/TextBetweenLine";
+export * from "./OrderHeader/OrderHeader";

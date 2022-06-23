@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import styled, { css } from "styled-components";
 import { Text, ImageWithText, Button } from "..";
 
@@ -44,6 +45,7 @@ const ImageContainer = styled.div<ImageProps>`
 `;
 
 export const CategoryCard = ({ heading, imgs }: Props) => {
+  const nav = useNavigate();
   return (
     <CategoryCardContainer>
       <Text type="h2" fontSize="21px" textColor="#0f1111">
@@ -58,7 +60,9 @@ export const CategoryCard = ({ heading, imgs }: Props) => {
           />
         ))}
       </ImageContainer>
-      <Button plainText>Shop now</Button>
+      <Button plainText onClick={() => nav("items")}>
+        Shop now
+      </Button>
     </CategoryCardContainer>
   );
 };

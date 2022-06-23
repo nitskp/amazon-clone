@@ -1,14 +1,14 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { NavLink } from "../../Components";
+import { TheNavLink } from "../../Components";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 
 export default {
-  title: "Molecules/NavLink",
-  component: NavLink,
-} as ComponentMeta<typeof NavLink>;
+  title: "Molecules/TheNavLink",
+  component: TheNavLink,
+} as ComponentMeta<typeof TheNavLink>;
 
-const Template: ComponentStory<typeof NavLink> = (args) => (
-  <NavLink {...args} />
+const Template: ComponentStory<typeof TheNavLink> = (args) => (
+  <TheNavLink {...args} />
 );
 
 export const Default = Template.bind({});

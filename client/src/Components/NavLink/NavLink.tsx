@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styled, { css } from "styled-components";
 
 interface Props {
@@ -15,7 +15,7 @@ interface StyledProps {
   color?: string;
 }
 
-const Item = styled(Link)<StyledProps>`
+const Item = styled(NavLink)<StyledProps>`
   text-decoration: none;
   color: white;
   display: flex;
@@ -48,7 +48,7 @@ const Item = styled(Link)<StyledProps>`
     `}
 `;
 
-export const NavLink = ({ to, mainText, smallText, icon, color }: Props) => {
+export const TheNavLink = ({ to, mainText, smallText, icon, color }: Props) => {
   return (
     // !! to conver icon to boolean type
     <Item to={to} cart={!!icon} color={color}>

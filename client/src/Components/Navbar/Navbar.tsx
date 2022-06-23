@@ -5,7 +5,7 @@ import {
   AiOutlineMenu,
   AiOutlineClose,
 } from "react-icons/ai";
-import { Brand, Searchbar, NavLink } from "..";
+import { Brand, Searchbar, TheNavLink } from "..";
 import { useState } from "react";
 
 interface ShowItem {
@@ -113,21 +113,21 @@ export const Navbar = () => {
             <AiOutlineClose fontSize={40} color="#000000" />
           </div>
 
-          <NavLink
-            to={"auth"}
+          <TheNavLink
+            to={"/auth"}
             smallText={"Hello, Sign in"}
             mainText={" Account & Lists"}
             color={showNavbar ? "#000000" : "#ffffff"}
           />
-          <NavLink
-            to="orders"
+          <TheNavLink
+            to="/orders"
             smallText="Returns"
             mainText="& Orders"
             color={showNavbar ? "#000000" : "#ffffff"}
           />
 
-          <NavLink
-            to="cart"
+          <TheNavLink
+            to="/cart"
             smallText="0"
             mainText="Cart"
             color={showNavbar ? "#000000" : "#ffffff"}

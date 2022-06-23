@@ -1,4 +1,5 @@
 import { BsStarFill, BsStarHalf, BsStar } from "react-icons/bs";
+import { Span } from "..";
 
 export const Review = ({ avgReview }: { avgReview: number }) => {
   const noOfFullStars = Math.floor(avgReview);
@@ -21,8 +22,8 @@ export const Review = ({ avgReview }: { avgReview: number }) => {
   }
 
   return (
-    <>
+    <Span fontSize="16px">
       {Stars}
-    </>
+    </Span>
   );
 };

@@ -1,11 +1,12 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Text } from "..";
+import { CommonProps, CommonStyles } from "../CommonProps";
 
-interface Props {
+interface Props extends CommonProps {
   price: number;
 }
 // 20B( doesn't works for Rs. symbol)
-const StyledPrice = styled(Text)`
+const StyledPrice = styled(Text)<Partial<Props>>`
   font-size: 18px;
   font-weight: 700;
   position: relative;
@@ -16,9 +17,13 @@ const StyledPrice = styled(Text)`
     left: -20px;
     content: "Rs";
   }
+  ${(props) => css`
+    ${CommonStyles}
+  `}
 `;
 
-export const Price = ({ price }: Props) => {
+export const Price = (props: Props) => {
+  const { price } = props;
   // const addCommas = (price: number) => {
   //   const digits = String(price).split("");
   //   const length = digits.length;
@@ -39,5 +44,9 @@ export const Price = ({ price }: Props) => {
   //   });
   // };
   // need to check add commas function and make it a helper function, needed other places too
-  return <StyledPrice type="p">{price}</StyledPrice>;
+  return (
+    <StyledPrice type="p" {...props}>
+      {price}
+    </StyledPrice>
+  );
 };

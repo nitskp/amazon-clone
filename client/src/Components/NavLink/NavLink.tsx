@@ -11,7 +11,7 @@ interface Props {
 }
 
 interface StyledProps {
-  cart?: boolean;
+  $cart?: boolean;
   color?: string;
 }
 
@@ -29,8 +29,8 @@ const Item = styled(NavLink)<StyledProps>`
 
   ${({ color }) => color && `color: ${color};`}
 
-  ${({ cart }) =>
-    cart &&
+  ${({ $cart }) =>
+    $cart &&
     css`
       display: flex;
       flex-direction: row;
@@ -50,8 +50,7 @@ const Item = styled(NavLink)<StyledProps>`
 
 export const TheNavLink = ({ to, mainText, smallText, icon, color }: Props) => {
   return (
-    // !! to conver icon to boolean type
-    <Item to={to} cart={!!icon} color={color}>
+    <Item to={to} $cart={icon ? true : false} color={color}>
       {icon}
       <span>{smallText}</span>
       {mainText}

@@ -4,8 +4,10 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import App from "./Pages/App";
 import Auth from "./Pages/Auth";
 import Cart from "./Pages/Cart";
+import ItemHeroPage from "./Pages/ItemHeroPage";
 import Items from "./Pages/Items";
 import Orders from "./Pages/Orders";
+import Signup from "./Pages/Signup";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(
@@ -20,6 +22,8 @@ root.render(
         <Route path="/cart" element={<Cart />} />
         <Route path="/auth" element={<Auth />} />
         <Route path="/items" element={<Items />} />
+        <Route path="/item" element={<ItemHeroPage />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="*" element={<Navigate to={"/"} replace />} />
       </Routes>
     </BrowserRouter>

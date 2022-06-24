@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { Review, Text, Price } from "..";
 
@@ -18,6 +19,14 @@ const ItemCardContainer = styled.div`
   padding: 10px;
   max-width: 280px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  h2 {
+    span {
+      cursor: pointer;
+      :hover {
+        color: #eeba37;
+      }
+    }
+  }
   .item__img {
     width: 100%;
     vertical-align: center;
@@ -77,6 +86,8 @@ export const ItemCard = ({
   avgReview,
   noOfReviews,
 }: Props) => {
+  const nav = useNavigate();
+
   // calculating discounted Price
   const discountedPrice = (
     originalPrice: number,
@@ -88,11 +99,11 @@ export const ItemCard = ({
 
   return (
     <ItemCardContainer>
-      <div className="item__img">
+      <div className="item__img" onClick={() => nav("/item")}>
         <img src={itemImg} alt="Item" />
       </div>
       <Text type="h2" fontSize="16px" textColor="#0f1111">
-        {itemTitle}
+        <span onClick={() => nav("/item")}>{itemTitle}</span>
       </Text>
       <div className="item__review">
         <div className="review__stars">
@@ -102,7 +113,9 @@ export const ItemCard = ({
       </div>
       {/* need to add a function to add commas every three digits */}
       <div className="price">
-        <Text type="p" fontSize="14px">{"(" + discountInPercent + "%) off"}</Text>
+        <Text type="p" fontSize="14px">
+          {"(" + discountInPercent + "%) off"}
+        </Text>
         <Text type="p" className="item__price">
           {price}
         </Text>

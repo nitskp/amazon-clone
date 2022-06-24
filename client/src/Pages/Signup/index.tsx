@@ -1,19 +1,13 @@
 import styled from "styled-components";
-import {
-  Anchor,
-  Brand,
-  Button,
-  Footer,
-  Input,
-  Text,
-  TextBetweenLine,
-} from "../../Components";
+import { Anchor, Brand, Button, Footer, Input, Text } from "../../Components";
 import amazonLogoBlack from "../../Assets/images/amazonLogoBlack.png";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { GlobalStyles } from "../../Components/GlobalStyles";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 interface Inputs {
+  name?: string;
+  mobileNumber?: string;
   email?: string;
   password?: string;
 }
@@ -47,6 +41,11 @@ const Form = styled.form`
   padding: 20px 26px;
   text-align: left;
   margin-bottom: 40px;
+  .blue-link {
+    color: #0066c0;
+    text-decoration: none;
+    margin-left: 6px;
+  }
   label {
     margin-bottom: 3px;
   }
@@ -76,7 +75,6 @@ const Wrapper = styled.div`
 const Auth = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
-  const nav = useNavigate();
   return (
     <Wrapper>
       <GlobalStyles />
@@ -86,8 +84,21 @@ const Auth = () => {
       <Container>
         <Form onSubmit={handleSubmit(onSubmit)}>
           <Text type="h1" fontSize="28px">
-            Sign-In
+            Create Account
           </Text>
+          <Input
+            type="text"
+            register={register}
+            name="name"
+            label="Your Name"
+          />
+          {/* for the time being lets leave the select with country code  */}
+          <Input
+            type="tel"
+            register={register}
+            name="mobileNumber"
+            label="Mobile Number"
+          />
           <Input type="email" register={register} name="email" label="Email" />
           <Input
             type="password"
@@ -96,7 +107,7 @@ const Auth = () => {
             label="Password"
           />
           <Button type="submit" primary large>
-            Sign-in
+            Create Account
           </Button>
           <Text type="p" fontSize="12px">
             {" "}
@@ -109,16 +120,15 @@ const Auth = () => {
               Privacy Notice.
             </Anchor>
           </Text>
+          <Text type="p" fontSize="12px">
+            Already have an account?
+            <Link to="/auth" className="blue-link">
+              {/*textColor="#0066c0">*/}
+              sign in.
+            </Link>{" "}
+          </Text>
         </Form>
-        <TextBetweenLine text=" New to Amazon?" />
-        <Button
-          silver
-          large
-          className="create-account"
-          onClick={() => nav("/signup")}
-        >
-          Create your Amazon Account
-        </Button>
+
         <hr />
       </Container>
 

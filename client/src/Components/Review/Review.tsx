@@ -18,12 +18,8 @@ export const Review = ({ avgReview }: { avgReview: number }) => {
 
   //adding empty stars
   for (let i = 5 - noOfFullStars; i > 0; i--) {
-    Stars.push(<BsStar key={`empty-star-${i}`} />);
+    Stars.push(<BsStar key={`empty-star-${i}`} color="#E88520" />);
   }
 
-  return (
-    <Span fontSize="16px">
-      {Stars}
-    </Span>
-  );
+  return <Span fontSize="16px">{Stars}</Span>;
 };

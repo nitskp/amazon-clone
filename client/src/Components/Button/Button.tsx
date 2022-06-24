@@ -13,6 +13,8 @@ interface Props extends CommonProps {
   silver?: boolean;
   icon?: boolean;
   large?: boolean;
+  orange?: boolean;
+  roundBorder?: boolean;
   // need to check this part
   onClick?: () => void;
 }
@@ -84,6 +86,12 @@ const StyledButton = styled.button<Props>`
       justify-content: space-evenly;
     `}
     ${(props) =>
+    props.orange &&
+    css`
+      background: #ea860e;
+      border-color: #ea860e;
+    `}
+    ${(props) =>
     props.large &&
     css`
       min-width: 200px;
@@ -94,6 +102,11 @@ const StyledButton = styled.button<Props>`
     css`
     linear-gradient(to bottom,#f7f8fa,#e7e9ec);
     border-color: #d5d5d5;
+    `}
+    ${(props) =>
+    props.roundBorder &&
+    css`
+      border-radius: 35px;
     `}
   ${(props) => css`
     ${CommonStyles}

@@ -9,7 +9,7 @@ import { Brand, Searchbar, TheNavLink } from "..";
 import { useState } from "react";
 
 interface ShowItem {
-  display?: boolean;
+  $display?: boolean;
 }
 
 const Header = styled.header`
@@ -62,10 +62,10 @@ const Container = styled.div<ShowItem>`
   }
   @media (max-width: 443px) {
     .hamburger-container {
-      display: ${({ display }) => (!display ? "block" : "none;")};
+      display: ${({ $display }) => (!$display ? "block" : "none;")};
     }
     .close-container {
-      display: ${({ display }) => (display ? "block" : "none;")};
+      display: ${({ $display }) => ($display ? "block" : "none;")};
     }
   }
 `;
@@ -76,7 +76,7 @@ const NavLinks = styled.nav<ShowItem>`
   justify-content: center;
   justify-self: center;
   @media (max-width: 443px) {
-    display: ${({ display }) => (display ? "flex" : "none;")};
+    display: ${({ $display }) => ($display ? "flex" : "none;")};
     position: absolute;
     top: 0;
     right: -5vw;
@@ -98,7 +98,7 @@ export const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(false);
   return (
     <Header>
-      <Container display={showNavbar}>
+      <Container $display={showNavbar}>
         <Brand imgUrl={amazonLogo} />
         <Searchbar />
         <div
@@ -108,7 +108,7 @@ export const Navbar = () => {
           <AiOutlineMenu fontSize={40} color="#ffffff" />
         </div>
 
-        <NavLinks display={showNavbar}>
+        <NavLinks $display={showNavbar}>
           <div className="close-container" onClick={() => setShowNavbar(false)}>
             <AiOutlineClose fontSize={40} color="#000000" />
           </div>

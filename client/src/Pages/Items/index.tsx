@@ -136,7 +136,7 @@ const Items = () => {
           </Text>
         </div>
         <ItemsGrid>
-          {SAMPLE_ITEMS.map((item) => (
+          {SAMPLE_ITEMS.map((item, index) => (
             // Item will have onClick on image and it will navigate to itemHeroPage.
             <ItemCard
               avgReview={item.avgReview}
@@ -145,6 +145,7 @@ const Items = () => {
               itemTitle={item.itemTitle}
               noOfReviews={item.noOfReviews}
               price={item.price}
+              key={item.itemTitle + index}
             />
           ))}
         </ItemsGrid>

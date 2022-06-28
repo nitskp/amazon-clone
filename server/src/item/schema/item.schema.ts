@@ -18,7 +18,7 @@ export class ItemDetail {
 @Schema()
 export class Item {
   @Prop([String])
-  category: string[]; // need to decide category type
+  category: string; // need to decide category type
 
   @Prop()
   title: string;
@@ -26,8 +26,8 @@ export class Item {
   @Prop()
   avgReview: number; // can be derived. try to see this
 
-  @Prop({ type: MongooseSchema.Types.ObjectId, ref: 'User' })
-  reviews: User;
+  @Prop([{ type: MongooseSchema.Types.ObjectId, ref: 'User' }])
+  reviews: User[];
 
   @Prop({ type: Img })
   img: Img;

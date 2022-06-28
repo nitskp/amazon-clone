@@ -15,6 +15,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
     // why can't we use process.env.MONGO_URI
     MongooseModule.forRootAsync({
       imports: [ConfigModule],
+      // need to check why I can't connect
       useFactory: async (configService: ConfigService) => ({
         uri: configService.get<string>('MONGO_URI'),
       }),

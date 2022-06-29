@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { Logger, Module } from '@nestjs/common';
 import { ItemModule } from './item/item.module';
 import { UserModule } from './user/user.module';
 import { OrderModule } from './order/order.module';
@@ -11,14 +11,18 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
     UserModule,
     OrderModule,
     ConfigModule.forRoot(),
+
     // didn't understand this part. why we need to pass config here.
     // why can't we use process.env.MONGO_URI
     MongooseModule.forRootAsync({
       imports: [ConfigModule],
-      // need to check why I can't connect
-      useFactory: async (configService: ConfigService) => ({
-        uri: configService.get<string>('MONGO_URI'),
-      }),
+      // need to see how to connect without using allow access from anywhere
+      useFactory: async (configService: ConfigService) => {
+        return {
+          uri: configService.get<string>('MONGO_URI'),
+          dbName: 'e-commerce',
+        };
+      },
       inject: [ConfigService],
     }),
   ],

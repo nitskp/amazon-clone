@@ -1,13 +1,21 @@
+import { IsNotEmpty } from 'class-validator';
 import { Img, ItemDetail } from '../schema/item.schema';
 
 export class CreateItemDto {
-  category: string[]; // need to decide category type
+  @IsNotEmpty()
+  category: string; // need to decide category type
 
-  view: number; // can be derived. try to see this
+  @IsNotEmpty()
+  title: string;
+
+  @IsNotEmpty()
+  price: number;
+
+  avgReview: number; // can be derived. try to see this
 
   reviews: string[];
 
-  img: Img;
+  imgs: Img[];
 
   discountInPercent: number;
 

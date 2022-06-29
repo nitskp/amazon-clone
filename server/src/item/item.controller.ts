@@ -3,10 +3,14 @@ import {
   Controller,
   Delete,
   Get,
+  Logger,
   Param,
   Patch,
   Post,
+  UploadedFiles,
+  UseInterceptors,
 } from '@nestjs/common';
+import { FilesInterceptor } from '@nestjs/platform-express';
 import { CreateItemDto } from './dto/create-item.dto';
 import { UpdateItemDto } from './dto/update-item.dto';
 import { ItemService } from './item.service';
@@ -26,8 +30,12 @@ export class ItemController {
   }
 
   @Post()
-  create(@Body() createItemDto: CreateItemDto): Promise<any> {
-    return this.itemService.create(createItemDto);
+  @UseInterceptors(FilesInterceptor('imgs'))
+  create(
+    @Body() createItemDto: CreateItemDto,
+    @UploadedFiles() imgs: Array<Express.Multer.File>,
+  ): Promise<any> {
+    return this.itemService.create(createItemDto, imgs);
   }
 
   @Patch(':id')

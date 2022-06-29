@@ -17,7 +17,7 @@ export class ItemDetail {
 
 @Schema()
 export class Item {
-  @Prop([String])
+  @Prop(String)
   category: string; // need to decide category type
 
   @Prop()
@@ -29,8 +29,8 @@ export class Item {
   @Prop([{ type: MongooseSchema.Types.ObjectId, ref: 'User' }])
   reviews: User[];
 
-  @Prop({ type: Img })
-  img: Img;
+  @Prop([{ type: Img }])
+  imgs: Img[];
 
   @Prop()
   price: number;

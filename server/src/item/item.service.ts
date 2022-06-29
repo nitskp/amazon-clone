@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { CreateItemDto } from './dto/create-item.dto';
@@ -27,9 +27,15 @@ export class ItemService {
     }
   }
 
-  create(data: CreateItemDto): Promise<any> {
+  create(data: CreateItemDto, imgs: Array<Express.Multer.File>): Promise<any> {
     try {
-      const item = this.itemModel.create(data);
+      const imgsToUpload = imgs.map((img: Express.Multer.File) => ({
+        contentType: img.mimetype,
+        data: img.buffer,
+        fileName: img.originalname,
+      }));
+      Logger.debug(imgs[0].originalname);
+      const item = this.itemModel.create({ ...data, imgs: imgsToUpload });
       return item;
     } catch (error) {
       return error;

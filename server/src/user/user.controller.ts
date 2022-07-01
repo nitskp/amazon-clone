@@ -1,29 +1,52 @@
-import { Controller, Delete, Get, Patch, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Patch,
+  Post,
+  UploadedFile,
+  UseInterceptors,
+} from '@nestjs/common';
+import { FileInterceptor } from '@nestjs/platform-express';
+import { CreateUserDto } from './dto/createUser.dto';
+import { UpdateUserDto } from './dto/updateUser.dto';
+import { User } from './schema/user.schema';
+import { UserService } from './user.service';
 
 @Controller('user')
 export class UserController {
+  constructor(private userService: UserService) {}
   @Get()
-  findAll(): string {
-    return 'All users returned';
+  findAll(): Promise<User[]> {
+    return this.userService.findAll();
   }
 
   @Get(':id')
-  findById(): string {
-    return `find user by id`;
+  findById(@Param('id') id: string): Promise<User> {
+    return this.userService.findById(id);
   }
 
   @Post()
-  create(): string {
-    return `Create user`;
+  @UseInterceptors(FileInterceptor('profilePic'))
+  create(
+    @Body() createUserDto: CreateUserDto,
+    @UploadedFile() profilePic: Express.Multer.File,
+  ): Promise<any> {
+    return this.userService.create(createUserDto, profilePic);
   }
 
-  @Patch()
-  update(): string {
-    return `this updates a field`;
+  @Patch(':id')
+  update(
+    @Param('id') id: string,
+    @Body() updateUserDto: UpdateUserDto,
+  ): Promise<any> {
+    return this.userService.update(id, updateUserDto);
   }
 
-  @Delete()
-  delete(): string {
-    return `this deletes an user`;
+  @Delete(':id')
+  delete(@Param('id') id: string): Promise<any> {
+    return this.userService.delete(id);
   }
 }

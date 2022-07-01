@@ -1,4 +1,6 @@
-export class User {
+import { Img } from "src/item/schema/item.schema";
+
+export class CreateUserDto {
   name: string;
 
   mobile: string;
@@ -10,4 +12,6 @@ export class User {
   cartItems: string[];
 
   orders: string[];
+
+  profilePic: Img;
 }

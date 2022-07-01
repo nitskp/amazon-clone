@@ -1,4 +1,4 @@
-import { Injectable, Logger } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { CreateItemDto } from './dto/create-item.dto';
@@ -34,7 +34,7 @@ export class ItemService {
         data: img.buffer,
         fileName: img.originalname,
       }));
-      Logger.debug(imgs[0].originalname);
+     
       const item = this.itemModel.create({ ...data, imgs: imgsToUpload });
       return item;
     } catch (error) {

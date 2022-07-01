@@ -1,7 +1,9 @@
-import { Prop, Schema } from '@nestjs/mongoose';
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Schema as MongooseSchema } from 'mongoose';
-import { Item } from 'src/item/schema/item.schema';
+import { Img, Item } from 'src/item/schema/item.schema';
 import { Order } from 'src/order/schema/order.schema';
+
+export type UserDocument = User & Document;
 
 @Schema()
 export class User {
@@ -22,4 +24,9 @@ export class User {
 
   @Prop([{ type: MongooseSchema.Types.ObjectId, ref: 'Order' }])
   orders: Order[];
+
+  @Prop({ type: Img })
+  profilePic: Img;
 }
+
+export const UserSchema = SchemaFactory.createForClass(User);

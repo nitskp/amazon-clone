@@ -1,6 +1,6 @@
 import { Address } from '../schema/order.schema';
 
-export class Order {
+export class CreateOrderDto {
   datePlaced: Date;
 
   dateDelivered: Date;

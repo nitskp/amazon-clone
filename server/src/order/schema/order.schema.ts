@@ -1,4 +1,4 @@
-import { Prop, Schema } from '@nestjs/mongoose';
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document, Schema as MongooseSchema } from 'mongoose';
 // need to see if I can export it through module
 import { Item } from 'src/item/schema/item.schema';
@@ -17,7 +17,7 @@ export class Address {
 
 @Schema()
 export class Order {
-  @Prop()
+  @Prop({type: Date, default: new Date(Date.now())})
   datePlaced: Date;
 
   @Prop()
@@ -35,3 +35,5 @@ export class Order {
   @Prop([{ type: MongooseSchema.Types.ObjectId, ref: 'Item' }])
   items: Item[];
 }
+
+export const OrderSchema = SchemaFactory.createForClass(Order)
